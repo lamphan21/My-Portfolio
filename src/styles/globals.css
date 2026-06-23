@@ -1,0 +1,16 @@
+button,
+a,
+[role="button"],
+[onClick],
+[class*="cursor-pointer"] {
+  cursor: pointer;
+}
+
+[data-name="Overview"].content-stretch,
+[data-name="Context & Problem"].content-stretch,
+[data-name="Research"].content-stretch,
+[data-name="Solution design"].content-stretch,
+[data-name="Impact"].content-stretch,
+[data-name="Learning"].content-stretch {
+  margin-top: 80px;
+}

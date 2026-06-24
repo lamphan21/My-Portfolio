@@ -11,6 +11,9 @@ import imgImage6 from "./77e1cc3cda11307daec293f9a1a6cfb102f4598f.png";
 import imgImage7 from "./0d35f445e49c9ca8a5668d25ac74b5da54d6998c.png";
 import imgRectangle6567 from "./Alldessign.png";
 import imgImg38391 from "./b308d53a38f21c5e250c29efbd35fda85bb9cbaf.png";
+import imgSiteMap1 from "./site-map-1.png";
+import imgSiteMap2 from "./site-map-2.png";
+import imgSiteMap3 from "./site-map-3.png";
 
 function Frame5() {
   return (
@@ -1805,10 +1808,31 @@ function Frame101() {
 }
 
 function Frame102() {
+  const smBox = (label: string, bg: string, border: string, width: number) => (
+    <div key={label} style={{width, paddingLeft: 16, paddingRight: 16, paddingTop: 8, paddingBottom: 8, background: bg, borderRadius: 8, outline: `1px ${border} solid`, outlineOffset: -1, justifyContent: "center", alignItems: "center", gap: 10, display: "inline-flex"}}>
+      <div style={{color: "#595959", fontSize: 12, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "18px", wordWrap: "break-word"}}>{label}</div>
+    </div>
+  );
   return (
-    <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-[1200px]">
-      <p className="[word-break:break-word] font-['Reddit_Sans:SemiBold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#222] text-[20px] w-full">4.1 SITE-MAP</p>
-      <Frame101 />
+    <div style={{width: "100%", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 20, display: "inline-flex"}}>
+      <div style={{alignSelf: "stretch", color: "#222222", fontSize: 20, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "28px", wordWrap: "break-word"}}>4.1 SITE-MAP</div>
+      <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", gap: 20, display: "flex"}}>
+        {/* Intro with left border */}
+        <div style={{alignSelf: "stretch", paddingLeft: 20, borderLeft: "4px #8C8C8C solid", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", gap: 16, display: "flex"}}>
+          <div style={{width: 900, color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 400, lineHeight: "24px", wordWrap: "break-word"}}>Field research gave us the raw material. From there, I collaborated with the PM to define the app's information architecture — making sure every screen reflected how inspectors actually worked, not how we assumed they did.</div>
+          <div style={{justifyContent: "flex-start", alignItems: "flex-start", gap: 16, display: "inline-flex"}}>
+            <div style={{flexDirection: "column", justifyContent: "flex-start", alignItems: "center", gap: 4, display: "inline-flex"}}>
+              <img style={{width: 420, height: 315, borderRadius: 20, objectFit: "cover"}} src={imgSiteMap1} alt="" />
+              <div style={{color: "#8C8C8C", fontSize: 12, fontFamily: "Reddit Sans", fontWeight: 400, lineHeight: "18px", wordWrap: "break-word"}}>Discuss with my PM</div>
+            </div>
+            <div style={{flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 4, display: "inline-flex"}}>
+              <img style={{width: 420, height: 315, borderRadius: 20, objectFit: "cover"}} src={imgSiteMap2} alt="" />
+              <div style={{color: "#8C8C8C", fontSize: 12, fontFamily: "Reddit Sans", fontWeight: 400, lineHeight: "18px", wordWrap: "break-word"}}>Big team discuss flow in back-office for this App</div>
+            </div>
+          </div>
+        </div>
+        <img src={imgSiteMap3} alt="Site map" style={{width: "100%", borderRadius: 20, display: "block"}} />
+      </div>
     </div>
   );
 }
@@ -2013,10 +2037,25 @@ function Frame127() {
 
 function Frame116() {
   return (
-    <div className="content-stretch flex flex-col gap-[20px] items-start pb-[32px] relative shrink-0 w-[1200px]">
+    <div style={{width: "100%", paddingBottom: 32, flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 32, display: "inline-flex"}}>
       <p className="[word-break:break-word] font-['Reddit_Sans:SemiBold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#222] text-[20px] w-full">4.2 Key design decisions</p>
-      <Frame117 />
-      <Frame127 />
+      {/* Row 1: Default-to-normal + Diagram-based */}
+      <div style={{alignSelf: "stretch", paddingBottom: 20, justifyContent: "flex-start", alignItems: "center", gap: 24, display: "inline-flex"}}>
+        <Frame118 />
+        <Frame121 />
+      </div>
+      {/* Row 2: Offline-first + Abnormal requires evidence */}
+      <div style={{alignSelf: "stretch", justifyContent: "flex-start", alignItems: "center", gap: 60, display: "inline-flex"}}>
+        <Frame128 />
+        <Frame124 />
+      </div>
+      {/* Row 3: Guided photo — 570px wide */}
+      <div style={{width: 570, flexDirection: "column", justifyContent: "flex-start", alignItems: "center", gap: 20, display: "flex"}}>
+        <Frame132 />
+        <div className="h-[523px] relative shrink-0 w-[384px]">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
+        </div>
+      </div>
     </div>
   );
 }

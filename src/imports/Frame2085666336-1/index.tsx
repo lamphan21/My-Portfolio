@@ -14,6 +14,7 @@ import imgImg38391 from "./b308d53a38f21c5e250c29efbd35fda85bb9cbaf.png";
 import imgSiteMap1 from "./site-map-1.png";
 import imgSiteMap2 from "./site-map-2.png";
 import imgSiteMap3 from "./site-map-3.png";
+import imgIcDownload from "./ic_loading_download.gif";
 
 function Frame5() {
   return (
@@ -2443,12 +2444,131 @@ function Frame136() {
   );
 }
 
+function ImpactBar({ label, barWidth, barColor, timeLabel, timeColor, timeBold }: { label: string; barWidth: number; barColor: string; timeLabel: string; timeColor: string; timeBold?: boolean }) {
+  return (
+    <div style={{alignSelf: "stretch", justifyContent: "flex-start", alignItems: "center", gap: 16, display: "inline-flex"}}>
+      <div style={{width: 52, color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 500, lineHeight: "20px", wordWrap: "break-word"}}>{label}</div>
+      <div style={{flex: "1 1 0", height: 12, background: "#E8E8E8", overflow: "hidden", borderRadius: 999, flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 10, display: "inline-flex"}}>
+        <div style={{width: barWidth, flex: "1 1 0", background: barColor, borderRadius: 999}} />
+      </div>
+      <div style={{width: 60, color: timeColor, fontSize: 16, fontFamily: "Reddit Sans", fontWeight: timeBold ? 700 : 500, lineHeight: "20px", wordWrap: "break-word"}}>{timeLabel}</div>
+    </div>
+  );
+}
+
+function ImpactBeyondCard({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div style={{flex: "1 1 0", alignSelf: "stretch", paddingLeft: 20, paddingRight: 20, paddingTop: 16, paddingBottom: 16, background: "#3C3C3A", borderRadius: 16, outline: "1px #E8E8E8 solid", outlineOffset: -1, flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 8, display: "inline-flex"}}>
+      <div style={{alignSelf: "stretch", justifyContent: "flex-start", alignItems: "center", gap: 8, display: "inline-flex"}}>
+        <div style={{width: 24, height: 24, position: "relative", flexShrink: 0}}>
+          <div style={{width: 20, height: 20, left: 2, top: 2, position: "absolute", background: "#12A154"}} />
+        </div>
+        <div style={{color: "white", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "24px", wordWrap: "break-word"}}>{title}</div>
+      </div>
+      <div style={{alignSelf: "stretch", color: "white", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 400, lineHeight: "24px", wordWrap: "break-word"}}>{desc}</div>
+    </div>
+  );
+}
+
 function Impact() {
   return (
     <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full" data-name="Impact">
-      <Frame134 />
-      <Frame147 />
-      <Frame136 />
+      {/* Section header */}
+      <div style={{justifyContent: "flex-start", alignItems: "center", gap: 16, display: "inline-flex"}}>
+        <div style={{width: 155, height: 0, outline: "1px #306BD9 solid", outlineOffset: -0.5}} />
+        <div style={{color: "#306BD9", fontSize: 20, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "28px", wordWrap: "break-word"}}>IMPACT</div>
+        <div style={{width: 155, height: 0, outline: "1px #306BD9 solid", outlineOffset: -0.5}} />
+      </div>
+
+      <div style={{width: 900, flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 32, display: "flex"}}>
+
+        {/* Time comparison card */}
+        <div style={{alignSelf: "stretch", padding: 20, background: "#F7F7F7", borderRadius: 20, borderTop: "5px #222222 solid", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 24, display: "flex"}}>
+          {/* Header */}
+          <div style={{alignSelf: "stretch", justifyContent: "space-between", alignItems: "center", display: "inline-flex"}}>
+            <div style={{flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 16, display: "inline-flex"}}>
+              <div style={{color: "#222222", fontSize: 40, fontFamily: "Reem Kufi", fontWeight: 700, wordWrap: "break-word"}}>20 minutes saved.<br />Multiplied by every car.</div>
+              <div style={{justifyContent: "flex-start", alignItems: "center", gap: 52, display: "inline-flex"}}>
+                <div style={{justifyContent: "flex-start", alignItems: "center", gap: 8, display: "flex"}}>
+                  <div style={{width: 16, height: 16, background: "#C0C0C0"}} />
+                  <div style={{color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 500, lineHeight: "20px"}}>Before</div>
+                </div>
+                <div style={{justifyContent: "flex-start", alignItems: "center", gap: 8, display: "flex"}}>
+                  <div style={{width: 16, height: 16, background: "#12A154"}} />
+                  <div style={{color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 500, lineHeight: "20px"}}>After</div>
+                </div>
+              </div>
+            </div>
+            <img style={{width: 226, height: 127, objectFit: "contain"}} src={imgIcDownload} alt="" />
+          </div>
+
+          {/* Enter vehicle & owner details */}
+          <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 16, display: "flex"}}>
+            <div style={{alignSelf: "stretch", color: "#222222", fontSize: 20, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "28px"}}>Enter vehicle &amp; owner details</div>
+            <ImpactBar label="Before" barWidth={77} barColor="#C0C0C0" timeLabel="5 mins" timeColor="#222222" />
+            <ImpactBar label="After" barWidth={77} barColor="#12A154" timeLabel="5 mins" timeColor="#12A154" />
+          </div>
+
+          {/* Inspect vehicle & capture photos */}
+          <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 16, display: "flex"}}>
+            <div style={{alignSelf: "stretch", color: "#222222", fontSize: 20, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "28px"}}>Inspect vehicle &amp; capture photos</div>
+            <ImpactBar label="Before" barWidth={375} barColor="#C0C0C0" timeLabel="30 mins" timeColor="#222222" />
+            <div style={{alignSelf: "stretch", flexDirection: "column", gap: 4, display: "flex"}}>
+              <ImpactBar label="After" barWidth={375} barColor="#12A154" timeLabel="30 mins" timeColor="#12A154" />
+              <div style={{alignSelf: "stretch", textAlign: "right", color: "#595959", fontSize: 16, fontFamily: "Reddit Sans", fontStyle: "italic", fontWeight: 500, lineHeight: "20px"}}>*same time, higher accuracy</div>
+            </div>
+          </div>
+
+          {/* Upload to CRM */}
+          <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 16, display: "flex"}}>
+            <div style={{alignSelf: "stretch", color: "#222222", fontSize: 20, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "28px"}}>Upload to CRM</div>
+            <ImpactBar label="Before" barWidth={314} barColor="#C0C0C0" timeLabel="5 mins" timeColor="#222222" />
+            <ImpactBar label="After" barWidth={12} barColor="#12A154" timeLabel="~2 mins" timeColor="#12A154" timeBold />
+          </div>
+        </div>
+
+        {/* Total + stat cards */}
+        <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 16, display: "flex"}}>
+          <div style={{alignSelf: "stretch", justifyContent: "space-between", alignItems: "center", display: "inline-flex"}}>
+            <div style={{color: "black", fontSize: 24, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "32px"}}>Total</div>
+            <div style={{justifyContent: "flex-start", alignItems: "center", gap: 16, display: "flex"}}>
+              <div style={{color: "#595959", fontSize: 24, fontFamily: "Reddit Sans", fontWeight: 500, lineHeight: "32px"}}>~55 mins</div>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#595959" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <div style={{color: "#12A154", fontSize: 24, fontFamily: "Reddit Sans", fontWeight: 800, lineHeight: "32px"}}>~36 mins</div>
+            </div>
+            <div style={{paddingLeft: 12, paddingRight: 12, paddingTop: 4, paddingBottom: 4, background: "#ECF9F1", borderRadius: 8, outline: "1px #12A154 solid", outlineOffset: -1, display: "flex", alignItems: "center"}}>
+              <div style={{color: "#12A154", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "24px"}}>-35%</div>
+            </div>
+          </div>
+          <div style={{alignSelf: "stretch", justifyContent: "flex-start", alignItems: "center", gap: 24, display: "inline-flex"}}>
+            {[
+              {value: "-35%", label: "Faster per inspection", sub: "55 mins → 36 mins"},
+              {value: "+40%", label: "Inspector capacity", sub: "~7 → ~10 vehicles/day"},
+              {value: "0 mins", label: "Manual re-entry eliminated", sub: "20 mins → auto-sync"},
+            ].map(({value, label, sub}) => (
+              <div key={label} style={{flex: "1 1 0", paddingLeft: 20, paddingRight: 20, paddingTop: 16, paddingBottom: 16, background: "#3C3C3A", borderRadius: 16, outline: "1px #E8E8E8 solid", outlineOffset: -1, flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 8, display: "inline-flex"}}>
+                <div style={{alignSelf: "stretch", color: "#12A154", fontSize: 32, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "40px"}}>{value}</div>
+                <div style={{alignSelf: "stretch", color: "#8C8C8C", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "24px"}}>{label}</div>
+                <div style={{alignSelf: "stretch", color: "#8C8C8C", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "24px"}}>{sub}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Beyond time saved */}
+        <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 24, display: "flex"}}>
+          <div style={{alignSelf: "stretch", color: "#222222", fontSize: 32, fontFamily: "Reem Kufi", fontWeight: 700}}>Beyond time saved</div>
+          <div style={{alignSelf: "stretch", justifyContent: "flex-start", alignItems: "center", gap: 24, display: "inline-flex"}}>
+            <ImpactBeyondCard title="Zero data loss" desc="No more risk of losing paperwork or mixing up vehicle info" />
+            <ImpactBeyondCard title="SOP compliance" desc="Submit blocked until all Abnormal items have evidence" />
+          </div>
+          <div style={{alignSelf: "stretch", justifyContent: "flex-start", alignItems: "flex-start", gap: 24, display: "inline-flex"}}>
+            <ImpactBeyondCard title="Single source of truth" desc="Checklist, notes, and photos all live in one place" />
+            <ImpactBeyondCard title="Built-in onboarding" desc="Guided photo helps new inspectors get up to speed fast" />
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }

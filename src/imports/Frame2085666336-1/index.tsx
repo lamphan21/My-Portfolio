@@ -15,6 +15,8 @@ import imgSiteMap1 from "./site-map-1.png";
 import imgSiteMap2 from "./site-map-2.png";
 import imgSiteMap3 from "./site-map-3.png";
 import imgIcDownload from "./ic_loading_download.gif";
+import imgLearning1 from "./learning1.png";
+import imgNextstep1 from "./nextstep1.png";
 
 function Frame5() {
   return (
@@ -2768,8 +2770,92 @@ function Frame164() {
 function Learning() {
   return (
     <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full" data-name="Learning">
-      <Frame137 />
-      <Frame164 />
+      {/* Section header */}
+      <div style={{justifyContent: "flex-start", alignItems: "center", gap: 16, display: "inline-flex"}}>
+        <div style={{width: 155, height: 0, outline: "1px #306BD9 solid", outlineOffset: -0.5}} />
+        <div style={{color: "#306BD9", fontSize: 20, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "28px", wordWrap: "break-word"}}>LEARNING &amp; NEXT STEP</div>
+        <div style={{width: 155, height: 0, outline: "1px #306BD9 solid", outlineOffset: -0.5}} />
+      </div>
+
+      {/* 6.1 Learning + side image */}
+      <div style={{width: "100%", justifyContent: "flex-start", alignItems: "center", gap: 32, display: "inline-flex"}}>
+        <div style={{flex: "1 1 0", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 16, display: "inline-flex"}}>
+          <div style={{color: "#222222", fontSize: 20, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "28px", wordWrap: "break-word"}}>6.1 Learning</div>
+
+          {/* What worked? */}
+          <div style={{alignSelf: "stretch", padding: 16, background: "#F7F7F7", borderRadius: 16, justifyContent: "flex-start", alignItems: "center", gap: 20, display: "inline-flex"}}>
+            <div style={{width: 250, flexDirection: "column", justifyContent: "flex-start", alignItems: "center", gap: 13, display: "inline-flex"}}>
+              <div style={{width: 60, height: 60, position: "relative", overflow: "hidden"}}>
+                <div style={{width: 37.76, height: 42.54, left: 11.12, top: 0, position: "absolute", background: "#FFE181"}} />
+                <div style={{width: 21.38, height: 42.54, left: 11.12, top: 0, position: "absolute", background: "#FEC458"}} />
+                <div style={{width: 11.46, height: 23.46, left: 24.27, top: 19.86, position: "absolute", background: "#FFB640"}} />
+                <div style={{width: 9.18, height: 10.74, left: 35.77, top: 5.10, position: "absolute", background: "#FFEAC8"}} />
+                <div style={{width: 7.31, height: 4.32, left: 26.34, top: 55.68, position: "absolute", background: "#8479C2"}} />
+                <div style={{width: 5.29, height: 4.32, left: 26.34, top: 55.68, position: "absolute", background: "#6E60B8"}} />
+                <div style={{width: 54.58, height: 15.39, left: 2.71, top: 10.70, position: "absolute", background: "#FEC458"}} />
+                <div style={{width: 15.56, height: 4.48, left: 22.22, top: 51.23, position: "absolute", background: "#EFECEF"}} />
+                <div style={{width: 15.56, height: 3.36, left: 22.22, top: 52.35, position: "absolute", background: "#E2DFE2"}} />
+                <div style={{width: 17.97, height: 4.48, left: 21.02, top: 46.81, position: "absolute", background: "#EFECEF"}} />
+                <div style={{width: 17.97, height: 3.36, left: 21.01, top: 47.93, position: "absolute", background: "#E2DFE2"}} />
+                <div style={{width: 17.97, height: 4.48, left: 21.02, top: 42.39, position: "absolute", background: "#EFECEF"}} />
+                <div style={{width: 17.97, height: 3.36, left: 21.01, top: 43.51, position: "absolute", background: "#E2DFE2"}} />
+              </div>
+              <div style={{color: "#222222", fontSize: 20, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "28px", wordWrap: "break-word"}}>What worked?</div>
+            </div>
+            <div style={{flex: "1 1 0", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 8, display: "inline-flex"}}>
+              <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 4, display: "flex"}}>
+                <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "24px", wordWrap: "break-word"}}>Go to the field instead of scheduling interviews</div>
+                <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 400, lineHeight: "24px", wordWrap: "break-word"}}>The most critical insights only appeared on-site. These small frictions would never surface in a meeting room.</div>
+              </div>
+              <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 4, display: "flex"}}>
+                <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "24px", wordWrap: "break-word"}}>No benchmark forced better decisions</div>
+                <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 400, lineHeight: "24px", wordWrap: "break-word"}}>Every decision had to be justified by real user behavior — not by what others had done before.</div>
+              </div>
+            </div>
+          </div>
+
+          {/* What I'd do differently */}
+          <div style={{alignSelf: "stretch", padding: 16, background: "#F7F7F7", borderRadius: 16, justifyContent: "flex-start", alignItems: "center", gap: 20, display: "inline-flex"}}>
+            <div style={{width: 250, flexDirection: "column", justifyContent: "flex-start", alignItems: "center", gap: 13, display: "inline-flex"}}>
+              <div style={{width: 60, height: 60, position: "relative", overflow: "hidden"}}>
+                <div style={{width: 46.04, height: 56.07, left: 12.90, top: 1.93, position: "absolute", background: "#F29C1F"}} />
+                <div style={{width: 46.34, height: 48.76, left: 6.89, top: 3.81, position: "absolute", transform: "rotate(7deg)", transformOrigin: "top left", background: "#F0C419"}} />
+                <div style={{width: 12, height: 22, left: 27, top: 0, position: "absolute", background: "#547580"}} />
+              </div>
+              <div style={{color: "#222222", fontSize: 20, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "28px", wordWrap: "break-word"}}>What I'd do differently</div>
+            </div>
+            <div style={{flex: "1 1 0", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 8, display: "inline-flex"}}>
+              <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 4, display: "flex"}}>
+                <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "24px", wordWrap: "break-word"}}>Ship guided photo from day one</div>
+                <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 400, lineHeight: "24px", wordWrap: "break-word"}}>Its value went beyond onboarding — it ensured every report had consistent photo coverage. Should have been core from the start.</div>
+              </div>
+              <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 4, display: "flex"}}>
+                <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "24px", wordWrap: "break-word"}}>More time in the field, with more inspectors</div>
+                <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 400, lineHeight: "24px", wordWrap: "break-word"}}>One day gave a solid foundation — but more visits with a wider range of inspectors would have surfaced more diverse insights earlier.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img style={{width: 284, height: 407, borderRadius: 20, objectFit: "cover"}} src={imgLearning1} alt="" />
+      </div>
+
+      {/* 6.2 Next step */}
+      <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 24, display: "flex"}}>
+        <div style={{alignSelf: "stretch", color: "#222222", fontSize: 20, fontFamily: "Reddit Sans", fontWeight: 600, lineHeight: "28px", wordWrap: "break-word"}}>6.2 Next step</div>
+        <div style={{alignSelf: "stretch", justifyContent: "flex-start", alignItems: "center", gap: 20, display: "inline-flex"}}>
+          <img style={{width: 250, height: 239, objectFit: "cover"}} src={imgNextstep1} alt="" />
+          <div style={{width: 614, flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 16, display: "inline-flex"}}>
+            <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 4, display: "flex"}}>
+              <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "24px", wordWrap: "break-word"}}>Expanding to Mudah</div>
+              <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 400, lineHeight: "24px", wordWrap: "break-word"}}>The Inspection App was built with Chợ Tốt Xe as the primary market — but as part of the AutoX shared platform, the next step is rolling it out for Mudah's inspector team in Malaysia. The core flow remains the same; the focus will be adapting to local workflows, documentation requirements, and any market-specific differences.</div>
+            </div>
+            <div style={{alignSelf: "stretch", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", gap: 4, display: "flex"}}>
+              <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 700, lineHeight: "24px", wordWrap: "break-word"}}>Continuous improvement based on inspector feedback</div>
+              <div style={{alignSelf: "stretch", color: "#222222", fontSize: 16, fontFamily: "Reddit Sans", fontWeight: 400, lineHeight: "24px", wordWrap: "break-word"}}>Guided photo proved that post-launch iteration matters. The team will continue collecting feedback directly from inspectors — ensuring the app evolves alongside their needs and helps them maintain inspection targets.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

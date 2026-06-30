@@ -100,11 +100,200 @@ function ContactCard({
   );
 }
 
+function ResumePage({ onBack }: { onBack: () => void }) {
+  return (
+    <div style={{width: "100%", minHeight: "100vh", background: "linear-gradient(180deg, #E0ECFF 0%, white 30%)", position: "relative", overflowX: "hidden"}}>
+      <Toaster position="top-right" />
+      {/* Header */}
+      <div className="resume-no-print" style={{width: "100%", paddingLeft: 120, paddingRight: 120, paddingTop: 16, paddingBottom: 16, boxShadow: "0px 4px 8px rgba(89,89,89,0.15)", background: "white", display: "flex", alignItems: "center", gap: 8}}>
+        <button
+          onClick={onBack}
+          style={{paddingLeft: 16, paddingRight: 16, paddingTop: 8, paddingBottom: 8, background: "white", borderRadius: 999, display: "flex", alignItems: "center", gap: 8, border: "none", cursor: "pointer"}}
+        >
+          <svg fill="none" viewBox="0 0 12 11" style={{width: 12, height: 10.75}}>
+            <path d="M11 5.5H1M1 5.5L5.5 1M1 5.5L5.5 10" stroke="#222222" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          <span style={{color: "#222222", fontSize: 14, fontFamily: "Reddit Sans, sans-serif", fontWeight: 700, lineHeight: "20px"}}>Back to me</span>
+        </button>
+      </div>
+
+      {/* Content area */}
+      <div style={{display: "flex", justifyContent: "center", alignItems: "flex-start", gap: 32, padding: "40px 60px 60px", boxSizing: "border-box"}}>
+        {/* Left: Action buttons */}
+        <div className="resume-no-print" style={{width: 245, flexShrink: 0, display: "flex", flexDirection: "column", gap: 20, paddingTop: 8}}>
+          <button
+            onClick={() => window.print()}
+            style={{width: "100%", height: 48, paddingLeft: 16, paddingRight: 16, paddingTop: 12, paddingBottom: 12, background: "#222222", borderRadius: 8, display: "flex", justifyContent: "center", alignItems: "center", gap: 8, border: "none", cursor: "pointer"}}
+          >
+            <svg fill="none" viewBox="0 0 18 20" style={{width: 18, height: 20}}>
+              <path d="M3 15H1a1 1 0 01-1-1V7a1 1 0 011-1h16a1 1 0 011 1v7a1 1 0 01-1 1h-2M3 6V2a1 1 0 011-1h10a1 1 0 011 1v4M5 12h8M5 16h8M9 12v7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span style={{color: "white", fontSize: 16, fontFamily: "Reddit Sans, sans-serif", fontWeight: 700, lineHeight: "24px"}}>Download PDF</span>
+          </button>
+          <button
+            onClick={async () => {
+              try {
+                await navigator.clipboard.writeText("+84898934341");
+              } catch {
+                const ta = document.createElement("textarea");
+                ta.value = "+84898934341";
+                ta.style.cssText = "position:fixed;opacity:0";
+                document.body.appendChild(ta);
+                ta.focus(); ta.select();
+                document.execCommand("copy");
+                document.body.removeChild(ta);
+              }
+              toast("Sao chép thành công", {
+                style: { marginTop: "72px" },
+                icon: (
+                  <div className="relative size-5 shrink-0">
+                    <svg fill="none" viewBox="0 0 20 20" className="absolute inset-0 size-full">
+                      <path clipRule="evenodd" d={checkSvg.p14321d00} fill="#12A154" fillRule="evenodd" />
+                    </svg>
+                  </div>
+                ),
+              });
+            }}
+            style={{width: "100%", height: 48, paddingLeft: 16, paddingRight: 16, paddingTop: 12, paddingBottom: 12, background: "#F4F4F4", borderRadius: 8, display: "flex", justifyContent: "center", alignItems: "center", gap: 8, border: "none", cursor: "pointer"}}
+          >
+            <svg fill="none" viewBox="0 0 21.2 21.2" style={{width: 21, height: 21}}>
+              <path d={svgPaths.p116da880} fill="#222222"/>
+            </svg>
+            <span style={{color: "#222222", fontSize: 16, fontFamily: "Reddit Sans, sans-serif", fontWeight: 700, lineHeight: "24px"}}>(+84) 8989 3434 1</span>
+          </button>
+          <a
+            href="mailto:lamphan643@gmail.com"
+            style={{width: "100%", height: 48, paddingLeft: 16, paddingRight: 16, paddingTop: 12, paddingBottom: 12, background: "#F4F4F4", borderRadius: 8, display: "flex", justifyContent: "center", alignItems: "center", gap: 8, textDecoration: "none", boxSizing: "border-box"}}
+          >
+            <svg fill="none" viewBox="0 0 20 15.3" style={{width: 20, height: 15.3}}>
+              <path d={svgPaths.p26f1d300} fill="#222222"/>
+            </svg>
+            <span style={{color: "#222222", fontSize: 16, fontFamily: "Reddit Sans, sans-serif", fontWeight: 700, lineHeight: "24px"}}>lamphan643@gmail.com</span>
+          </a>
+        </div>
+
+        {/* Right: Resume document */}
+        <div className="resume-document" style={{width: 595, minHeight: 842, background: "white", boxShadow: "0px 4px 16px rgba(34,34,34,0.12)", overflow: "hidden", flexShrink: 0, padding: 40, boxSizing: "border-box", display: "flex", flexDirection: "column", gap: 24}}>
+          {/* Profile row */}
+          <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: 85}}>
+            <div style={{flex: "1 1 0", display: "flex", alignItems: "center", gap: 8}}>
+              <img src={imgProfile} style={{width: 56, height: 56, borderRadius: 999, objectFit: "cover", objectPosition: "top", flexShrink: 0}} alt="Profile" />
+              <div style={{flex: "1 1 0", display: "flex", flexDirection: "column", gap: 4}}>
+                <div style={{color: "#222222", fontSize: 14, fontFamily: "Reddit Sans, sans-serif", fontWeight: 500, lineHeight: "20px"}}>PHAN HOÀNG THANH LÂM</div>
+                <div style={{color: "#595959", fontSize: 12, fontFamily: "Reddit Sans, sans-serif", fontWeight: 500, lineHeight: "18px"}}>PRODUCT DESIGNER</div>
+              </div>
+            </div>
+            <div style={{width: 150, display: "flex", flexDirection: "column", gap: 3, flexShrink: 0}}>
+              <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>(+84) 8989 3434 1</div>
+              <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>lamphan643@gmail.com</div>
+              <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>Hanh Thong ward, Ho Chi Minh city, Viet Nam</div>
+            </div>
+          </div>
+
+          {/* Body: two columns */}
+          <div style={{display: "flex", gap: 16, alignItems: "flex-start"}}>
+            {/* Left column — summary + experience */}
+            <div style={{width: 349, flexShrink: 0, display: "flex", flexDirection: "column", gap: 8}}>
+              <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>5 years designing at Chợ Tốt (Carousell Group) across multiple product verticals — from greenfield internal tools to large-scale consumer app redesigns. Actively integrates AI into the design workflow for faster ideation, prototyping, and delivery.</div>
+              <div style={{display: "flex", flexDirection: "column", gap: 8}}>
+                <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 700, lineHeight: "16px"}}>Experience</div>
+                <div style={{display: "flex", flexDirection: "column", gap: 6}}>
+                  {/* Product Designer */}
+                  <div style={{display: "flex", flexDirection: "column", gap: 4}}>
+                    <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                      <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 700, lineHeight: "16px"}}>Product Designer - Chợ Tốt</div>
+                      <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 500, lineHeight: "16px"}}>Nov 2021 - Present</div>
+                    </div>
+                    <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>Contributed to product design across Chợ Tốt's sub-brands including Chợ Tốt Xe, Nhà Tốt, and the core marketplace — working on a wide range of features from discovery and listing to e-commerce and internal tools</div>
+                    {/* Product Chat revamp */}
+                    <div style={{display: "flex", flexDirection: "column", gap: 1}}>
+                      <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 500, lineHeight: "16px"}}>Product Chat revamp (2025)</div>
+                      {["Redesigned chat from ads-based to user-based logic — driving monthly active chat buyers from 280k to 442k (134% of target) and improving CR from 3.5% to 4.0%", "Simplified the buyer chat experience — consolidating multiple disconnected rooms into a single unified conversation per seller", "Designed new in-chat features including Customer Management for sellers and an Offer feature for buyer-seller price negotiation"].map(t => (
+                        <div key={t} style={{display: "flex", gap: 4, color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>
+                          <span style={{flexShrink: 0}}>•</span><span>{t}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {/* Chợ Tốt revamp */}
+                    <div style={{display: "flex", flexDirection: "column", gap: 1}}>
+                      <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 500, lineHeight: "16px"}}>Chợ Tốt revamp &amp; rebrand (2024–2025)</div>
+                      {["Contributed to Chợ Tốt's largest rebrand — redesigning core pages in Figma to align with the new brand direction and design system", "Participated in UX validation via user interviews and usability testing to validate the new experience before release", "Audited design system compliance across all core pages and worked closely with dev through to launch to ensure a smooth release"].map(t => (
+                        <div key={t} style={{display: "flex", gap: 4, color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>
+                          <span style={{flexShrink: 0}}>•</span><span>{t}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {/* AutoX */}
+                    <div style={{display: "flex", flexDirection: "column", gap: 1}}>
+                      <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 500, lineHeight: "16px"}}>Chợ Tốt Xe — AutoX (2021–2024)</div>
+                      {["Served as the designer for Chợ Tốt Xe — leading UX/UI across marketplace, internal tools, and e-commerce within the automotive sector", "Built the Inspection App from scratch via field research and contextual inquiry — reducing inspection time by 35% and increasing inspector capacity by 40% (6–7 → 9–10 vehicles/day)", "Designed the Chợ Tốt Xe Official Store website and revamped vehicle listing pages to improve information hierarchy for car buyers"].map(t => (
+                        <div key={t} style={{display: "flex", gap: 4, color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>
+                          <span style={{flexShrink: 0}}>•</span><span>{t}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Intern */}
+                  <div style={{display: "flex", flexDirection: "column", gap: 4}}>
+                    <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                      <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 600, lineHeight: "16px"}}>Product Design Intern - Chợ Tốt</div>
+                      <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>May 2021 – Nov 2021</div>
+                    </div>
+                    <div style={{display: "flex", flexDirection: "column", gap: 1}}>
+                      {["Supported senior designers across research, wireframing, and prototyping in Figma", "Conducted competitor research and user interviews to inform design decisions", `Independently shipped "Dạo Chợ" — a social-style listing discovery feature shifting users from traditional search to continuous scroll`].map(t => (
+                        <div key={t} style={{display: "flex", gap: 4, color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>
+                          <span style={{flexShrink: 0}}>•</span><span>{t}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right column — skills, tools, education */}
+            <div style={{width: 150, flexShrink: 0, display: "flex", flexDirection: "column", gap: 12}}>
+              <div style={{display: "flex", flexDirection: "column", gap: 4}}>
+                <div style={{color: "#222222", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 600, lineHeight: "16px"}}>Skills</div>
+                <div style={{display: "flex", flexDirection: "column", gap: 2}}>
+                  {["UI Design", "Product Thinking", "Research", "Interaction Design", "Prototyping", "AI-assisted workflow"].map(s => (
+                    <div key={s} style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>{s}</div>
+                  ))}
+                </div>
+              </div>
+              <div style={{display: "flex", flexDirection: "column", gap: 4}}>
+                <div style={{color: "#222222", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 600, lineHeight: "16px"}}>Tools</div>
+                <div style={{display: "flex", flexDirection: "column", gap: 2}}>
+                  {["Figma Design", "Figma Make", "Claude AI", "Adobe (Photoshop, Illustrator)"].map(t => (
+                    <div key={t} style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 400, lineHeight: "16px"}}>{t}</div>
+                  ))}
+                </div>
+              </div>
+              <div style={{display: "flex", flexDirection: "column", gap: 4}}>
+                <div style={{color: "#222222", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", fontWeight: 600, lineHeight: "16px"}}>Education</div>
+                <div style={{display: "flex", flexDirection: "column", gap: 4}}>
+                  <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", lineHeight: "16px"}}><span style={{fontWeight: 500}}>Arena Multimedia (2019–2021) </span><span style={{fontWeight: 400}}>Graphic Design — Branding, UI/UX Design</span></div>
+                  <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", lineHeight: "16px"}}><span style={{fontWeight: 500}}>Da Lat University (2016–2019) </span><span style={{fontWeight: 400}}>Tourism Management</span></div>
+                  <div style={{color: "#595959", fontSize: 10, fontFamily: "Reddit Sans, sans-serif", lineHeight: "16px"}}><span style={{fontWeight: 500}}>CyberSoft Academy (2020–2021) </span><span style={{fontWeight: 400}}>Front-end Development</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
-  const [page, setPage] = useState<"home" | "case-study">("home");
+  const [page, setPage] = useState<"home" | "case-study" | "resume">("home");
 
   if (page === "case-study") {
     return <CaseStudy onBack={() => setPage("home")} />;
+  }
+
+  if (page === "resume") {
+    return <ResumePage onBack={() => setPage("home")} />;
   }
 
   return (
@@ -138,6 +327,14 @@ export default function App() {
 
         {/* Icon buttons */}
         <div className="flex items-center gap-4">
+          {/* My Resume text button */}
+          <button
+            onClick={() => setPage("resume")}
+            className="font-bold text-sm text-[#222] hover:text-[#306BD9] transition-colors duration-200 whitespace-nowrap"
+            style={{ fontFamily: "'Reddit Sans', sans-serif", background: "none", border: "none", cursor: "pointer", lineHeight: "20px" }}
+          >
+            My Resume
+          </button>
           {/* Mail */}
           <a
             href="mailto:lamphan643@gmail.com"

@@ -101,6 +101,7 @@ function ContactCard({
 }
 
 function ResumePage({ onBack }: { onBack: () => void }) {
+  const [showAvatar, setShowAvatar] = useState(true);
   return (
     <div style={{width: "100%", minHeight: "100vh", background: "linear-gradient(180deg, #E0ECFF 0%, white 30%)", position: "relative", overflowX: "hidden"}}>
       <Toaster position="top-right" />
@@ -121,6 +122,16 @@ function ResumePage({ onBack }: { onBack: () => void }) {
       <div style={{display: "flex", justifyContent: "center", alignItems: "flex-start", gap: 32, padding: "40px 60px 60px", boxSizing: "border-box"}}>
         {/* Left: Action buttons */}
         <div className="resume-no-print" style={{width: 245, flexShrink: 0, display: "flex", flexDirection: "column", gap: 20, paddingTop: 8}}>
+          {/* Avatar toggle */}
+          <div style={{width: "100%", display: "flex", justifyContent: "flex-start", alignItems: "center", gap: 12}}>
+            <span style={{color: "#222222", fontSize: 16, fontFamily: "Reddit Sans, sans-serif", fontWeight: 600, lineHeight: "24px"}}>Enable Avatar</span>
+            <div
+              onClick={() => setShowAvatar(v => !v)}
+              style={{width: 52, padding: 2, background: showAvatar ? "#FFD400" : "#E8E8E8", borderRadius: 16, display: "flex", justifyContent: showAvatar ? "flex-end" : "flex-start", cursor: "pointer", transition: "background 0.2s, justify-content 0.2s", flexShrink: 0}}
+            >
+              <div style={{width: 28, height: 28, background: "white", boxShadow: "0px 1px 2px rgba(34,34,34,0.12)", borderRadius: 9999, transition: "all 0.2s"}} />
+            </div>
+          </div>
           <button
             onClick={() => window.print()}
             style={{width: "100%", height: 48, paddingLeft: 16, paddingRight: 16, paddingTop: 12, paddingBottom: 12, background: "#222222", borderRadius: 8, display: "flex", justifyContent: "center", alignItems: "center", gap: 8, border: "none", cursor: "pointer"}}
@@ -177,8 +188,10 @@ function ResumePage({ onBack }: { onBack: () => void }) {
           {/* Profile row */}
           <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: 85}}>
             <div style={{flex: "1 1 0", display: "flex", alignItems: "center", gap: 8}}>
-              <img src={imgProfile} style={{width: 56, height: 56, borderRadius: 999, objectFit: "cover", objectPosition: "top", flexShrink: 0}} alt="Profile" />
-              <div style={{flex: "1 1 0", display: "flex", flexDirection: "column", gap: 4}}>
+              {showAvatar && (
+                <img src={imgProfile} style={{width: 56, height: 56, borderRadius: 999, objectFit: "cover", objectPosition: "top", flexShrink: 0}} alt="Profile" />
+              )}
+              <div style={{flex: "1 1 0", display: "flex", flexDirection: "column", gap: 4, alignItems: "flex-start"}}>
                 <div style={{color: "#222222", fontSize: 14, fontFamily: "Reddit Sans, sans-serif", fontWeight: 500, lineHeight: "20px"}}>PHAN HOÀNG THANH LÂM</div>
                 <div style={{color: "#595959", fontSize: 12, fontFamily: "Reddit Sans, sans-serif", fontWeight: 500, lineHeight: "18px"}}>PRODUCT DESIGNER</div>
               </div>
